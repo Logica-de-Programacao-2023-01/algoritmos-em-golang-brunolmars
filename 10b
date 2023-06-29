@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func main() {
+	var numero, maior int
+	leituraInicial := true
+
+	for {
+		fmt.Println("Digite um número inteiro (0 para sair):")
+		fmt.Scanln(&numero)
+
+		if numero == 0 {
+			break
+		}
+
+		if leituraInicial {
+			maior = numero
+			leituraInicial = false
+		} else {
+			if numero > maior {
+				maior = numero
+			}
+		}
+	}
+
+	if leituraInicial {
+		fmt.Println("Nenhum número foi digitado.")
+	} else {
+		fmt.Println("O maior número digitado é:", maior)
+	}
+}
